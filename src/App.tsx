@@ -4,6 +4,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Cat from './data/cat';
 import { useState } from 'react'
+import CatCard from './components/cat_card';
 
 function App() {
 	// JavaScript code can be inserted here!
@@ -89,7 +90,7 @@ function App() {
 			<Header />
 
 			<main>
-				<div className='cards__wrapper'>{/* JSX code can go here */}</div>
+				<div className='cards__wrapper'>{<CatCard />}</div>
 			</main>
 
 			<Footer />
