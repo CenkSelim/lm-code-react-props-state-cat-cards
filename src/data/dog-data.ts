@@ -1,6 +1,6 @@
-import Cat from './cat';
+import Card from "./card"
 
-const dogs: Array<Cat> = [
+const dogData: Array<Card> = [
 	{
 		name: 'Floofus',
 		species: 'Puppy',
@@ -21,4 +21,4 @@ const dogs: Array<Cat> = [
 	},
 ];
 
-export default dogs;
+export default dogData;

@@ -1,4 +1,6 @@
- const catData = ([
+ import Card from "./card"
+
+ const catData: Array<Card>  = ([
    		{
 			name: 'Little Miss Purrfect',
 			species: 'Cat',
