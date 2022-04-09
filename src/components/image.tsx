@@ -1,4 +1,4 @@
-interface CatImageProps {
+interface ImageProps {
 	image: string;
 	altText: string;
 	licenceType: string;
@@ -7,7 +7,7 @@ interface CatImageProps {
 	attributionUrl?: string;
 }
 
-const CatImage: React.FC<CatImageProps> = ({ image, altText,licenceUrl,licenceType,attributionName,attributionUrl}) => (
+const CatImage: React.FC<ImageProps> = ({ image, altText,licenceUrl,licenceType,attributionName,attributionUrl}) => (
 	<>
 		<img className='card__image' src={image} alt={altText} />
         <p className='card__text__small'>

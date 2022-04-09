@@ -10,7 +10,7 @@ import cat9 from '../assets/images/cat9.jpg';
 import cat10 from '../assets/images/cat10.jpg';
 import cat11 from '../assets/images/cat11.jpg';
 import cat12 from '../assets/images/cat12.jpg';
-import CatImage from './cat_image'
+import CatImage from './image'
 
 interface CatCardProps{
    name: string;
