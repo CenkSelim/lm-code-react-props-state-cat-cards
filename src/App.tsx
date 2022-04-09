@@ -6,16 +6,21 @@ import Card from './data/card';
 import { useState } from 'react'
 import CatCard from './components/cat_card';
 import DogCard from './components/dog_card';
+import ImageCard from './components/card_image'
+
 import catData from './data/cat-data';
 import dogData from './data/dog-data';
+import catImageData from './data/cat-image-data';
+import Image from './data/image';
 
 function App() {
-	const [ cats, setCats ] = useState<Array<Card>>(catData);
-	const [ dogs, setDogs ] = useState<Array<Card>>(dogData);
-	console.log("Our pretties 😻: ", cats, dogs)
+	const [cats, setCats] = useState<Array<Card>>(catData);
+	const [dogs, setDogs] = useState<Array<Card>>(dogData);
+	const [images,setImages] = useState<Array<Image>>(catImageData);
+
+	console.log("Our pretties 😻: ", cats, dogs,images)
 	const catCount = cats.length;
 	const dogCount = dogs.length;
-	console.log(catCount, dogCount);
 	return (
 		<>
 			<Navbar />
@@ -25,15 +30,17 @@ function App() {
 			 />
 
 			<main>
-				<div className='cards__wrapper'> {cats.map((cat, index) => (
+				<div className='cards__wrapper'>{cats.map((cat, index) => (
 						<CatCard
 							key={index}
 							name={cat.name}
 							species={cat.species}
 							favFoods={cat.favFoods}
 							birthYear={cat.birthYear}
-							catIndex={index}
-						/>
+							catIndex={index}>
+							<ImageCard key={index} {...images[index]}
+								/>
+						</CatCard>
 					))}
 				</div>
 
