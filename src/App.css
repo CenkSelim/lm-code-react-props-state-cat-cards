@@ -93,6 +93,40 @@ body {
 	margin-bottom: 0.5em;
 }
 
+.form {
+	padding: 1.5em;
+	border: 6px solid var(--red);
+	max-width: 10.625em;
+	min-width: 10.25em;
+	border-radius: 7px;
+	background: var(--yellow);
+	margin-bottom: 1em;
+	box-shadow: 0 4px 8px 0 rgb(13, 59, 102, 0.4);
+	transition: 0.3s;
+	margin: 0.5em;
+}
+
+.form__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.form__text {
+	color: var(--navy);
+	font-family: 'SleepyCat';
+	font-size: 1.7rem;
+	margin: 0.2em;
+}
+
+.form__text__small {
+	color: var(--navy);
+	font-family: 'SleepyCat';
+	font-size: 1rem;
+	margin: 0.2em;
+}
+
 .links {
 	color: var(--yellow);
 	font-family: 'Cattino';
