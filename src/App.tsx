@@ -27,7 +27,20 @@ function App() {
     const [favFoods, setFavFoods] = useState<string[]>([]);
     const [birthYear, setBirthYear] = useState<number>(2022);
 
+	const updateCats = () => {
+		setCats([...cats, {name: name,
+			species: species,
+			favFoods: favFoods,
+			birthYear: birthYear
+		}]);
+        setName("");
+        setSpecies("");
+        setFavFoods([]);
+        setBirthYear(2022);
+	};
+
 	console.log("Our pretties 😻: ", cats, dogs,images)
+	
 	const catCount = cats.length;
 	const dogCount = dogs.length;
 	const imageCount = images.length;
@@ -45,12 +58,11 @@ function App() {
 					species={species}
 					favFoods={favFoods}
 					birthYear={birthYear}
-					cats={cats}
 					setName={setName}
         			setSpecies={setSpecies}
         			setFavFoods={setFavFoods}
         			setBirthYear={setBirthYear}
-					setCats={setCats}
+					updateCats={updateCats}
 				/>
 
 				<div className='cards__wrapper'>{cats.map((cat, index) => (

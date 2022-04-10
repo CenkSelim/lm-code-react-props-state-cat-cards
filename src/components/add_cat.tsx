@@ -1,48 +1,35 @@
-import Card from '../data/card';
-
 const CatForm:React.FC<{
     name:string;
 	species:string;
     favFoods:string[];
     birthYear:number;
-    cats:Array<Card>;
     setName:(name:string) => void;
     setSpecies:(species:string) => void;
     setFavFoods:(favFoods:string[]) => void;
     setBirthYear:(birthYear:number) => void;
-    setCats:(cats:Array<Card>) => void;
+    updateCats:() => void;
     }> = (
         {
         name,
 		species,
 		favFoods,
         birthYear,
-        cats,
         setName,
         setSpecies,
         setFavFoods,
         setBirthYear,
-        setCats}) => {
+        updateCats}) => {
 
             
-	const updateCats = (e: React.FormEvent<HTMLFormElement>) => {
+	const updateHandlerCats = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-		console.log(name,species,favFoods,birthYear);
-		setCats([...cats, {name: name,
-			species: species,
-			favFoods: favFoods,
-			birthYear: birthYear
-		}]);
-        setName("");
-        setSpecies("");
-        setFavFoods([]);
-        setBirthYear(2022);
+		updateCats();
 	};
 
 
     return (
         <div className="form__container">
-        <form onSubmit={updateCats}>
+        <form onSubmit={updateHandlerCats}>
             <div className='form'>
                 <h3 className="form__text" >Add a cat</h3>
                 <div>
