@@ -22,21 +22,12 @@ function App() {
 	const [dogs] = useState<Array<Card>>(dogData);
 	const [images] = useState<Array<Image>>(catImageData);
 
-	const [name, setName] = useState<string>('');
-    const [species, setSpecies] = useState<string>('');
-    const [favFoods, setFavFoods] = useState<string[]>([]);
-    const [birthYear, setBirthYear] = useState<number>(2022);
-
-	const updateCats = () => {
+	const updateCats = (name:string,species:string, favFoods:string[],birthYear:number) => {
 		setCats([...cats, {name: name,
 			species: species,
 			favFoods: favFoods,
 			birthYear: birthYear
 		}]);
-        setName("");
-        setSpecies("");
-        setFavFoods([]);
-        setBirthYear(2022);
 	};
 
 	console.log("Our pretties 😻: ", cats, dogs,images)
@@ -54,14 +45,6 @@ function App() {
 
 			<main>
 				<CatForm
-					name={name}
-					species={species}
-					favFoods={favFoods}
-					birthYear={birthYear}
-					setName={setName}
-        			setSpecies={setSpecies}
-        			setFavFoods={setFavFoods}
-        			setBirthYear={setBirthYear}
 					updateCats={updateCats}
 				/>
 

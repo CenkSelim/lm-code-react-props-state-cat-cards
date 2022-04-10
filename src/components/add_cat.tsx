@@ -1,29 +1,17 @@
-const CatForm:React.FC<{
-    name:string;
-	species:string;
-    favFoods:string[];
-    birthYear:number;
-    setName:(name:string) => void;
-    setSpecies:(species:string) => void;
-    setFavFoods:(favFoods:string[]) => void;
-    setBirthYear:(birthYear:number) => void;
-    updateCats:() => void;
-    }> = (
-        {
-        name,
-		species,
-		favFoods,
-        birthYear,
-        setName,
-        setSpecies,
-        setFavFoods,
-        setBirthYear,
-        updateCats}) => {
+import { useState } from 'react'
+const CatForm:React.FC<{updateCats:(name:string,species:string, favFoods:string[],birthYear:number) => void}> = ({updateCats}) => {
+    const [name, setName] = useState<string>('');
+    const [species, setSpecies] = useState<string>('');
+    const [favFoods, setFavFoods] = useState<string[]>([]);
+    const [birthYear, setBirthYear] = useState<number>(2022);
 
-            
 	const updateHandlerCats = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-		updateCats();
+		updateCats(name,species,favFoods,birthYear);
+        setName("");
+        setSpecies("");
+        setFavFoods([]);
+        setBirthYear(2022);
 	};
 
 
